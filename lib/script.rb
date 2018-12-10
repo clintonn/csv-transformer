@@ -28,13 +28,15 @@ OptionParser.new do |parser|
     '-i', '--input FILEPATH', 'Path to the CSV file to process'
   ) do |val|
     match = val.match(/.+(\..+)$/)
-    if match&.captures.first == 'csv'
+    if match&.captures&.first == 'csv'
       begin
         options[:input] = CSV.read(File.expand_path(val, './'), headers: true)
       rescue Errno::ENOENT
         puts 'Input file not found, please make sure your path name resolves relative to the project path'
         exit
       end
+    else
+      puts "No CSV input file given"
     end
   end
 
