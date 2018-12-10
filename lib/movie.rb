@@ -9,6 +9,8 @@ class Movie
   end
 
   def human_readable_run_time
-    "#{@run_time / 60}:#{@run_time % 60}"
+    minutes = @run_time % 60
+    minutes = minutes < 10 ? "0#{minutes}" : minutes
+    "#{@run_time / 60}:#{minutes}"
   end
 end

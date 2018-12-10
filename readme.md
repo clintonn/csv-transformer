@@ -1,6 +1,6 @@
 # CSV Transformer II - The Delimiting
 
-Welcome to the CSV Transformer!
+Welcome to the CSV Transformer! This Ruby script takes a CSV file, and outputs a formatted schedule plaintext file, with options to set start dates yourself.
 
 ## Setup
 

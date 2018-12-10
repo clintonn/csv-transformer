@@ -4,7 +4,7 @@ require_relative 'csv_transformer'
 options = {}
 
 OptionParser.new do |parser|
-  parser.banner = 'Usage: ruby lib/csv_transformer.rb'
+  parser.banner = 'Usage: ruby lib/csv_transformer.rb [options]'
   parser.on(
     '-o', '--output FILEPATH', 'Path to output relative to the project directory'
   ) do |val|
