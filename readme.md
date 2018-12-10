@@ -16,7 +16,9 @@ bundle
 
 ## Usage
 
-The CLI can be run using `ruby lib/script.rb`. The script accepts several flags:
+The CLI can be run using `ruby lib/script.rb`. By default, you can run just that and it will process a sample `./input/movies.csv` to `./output/showtimes.txt`. You can find an edge case sample in the `./input` file as well.
+
+The script accepts several flags if you want to specify your own input and output paths:
 
 ```
 -i, --input FILEPATH
