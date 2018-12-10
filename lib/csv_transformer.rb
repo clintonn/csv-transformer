@@ -8,13 +8,11 @@ class CSVTransformer
   def initialize(
     output: File.open(File.expand_path('output/showtimes.txt', './'), 'w'),
     input: CSV.read(File.expand_path('input/movies.csv', './'), headers: true),
-    print_results: false,
     start_date: DateTime.now.beginning_of_day,
     duration: 7
   )
     @output = output
     @input = input
-    @print_results = print_results
     @theater_schedule = TheaterSchedule.new
     @start_date = start_date
     @duration = duration
