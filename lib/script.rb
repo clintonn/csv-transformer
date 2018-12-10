@@ -41,13 +41,9 @@ OptionParser.new do |parser|
   end
 
   parser.on(
-    '-p', '--print', 'Print the output file to stdout'
-  ) { options[:print_results] = true }
-
-  parser.on(
     '-s', '--start-date STARTDATE', 'Date to start on in format YYYY-MM-DD or YYYY/MM/DD'
   ) do |val|
-    options[:start_date] = Date.parse(val)
+    options[:start_date] = DateTime.parse(val)
   rescue ArgumentError
     puts 'Please enter the date in format YYYY-MM-DD or YYYY/MM/DD'
     exit

@@ -23,8 +23,6 @@ The CLI can be run using `ruby lib/script.rb`. The script accepts several flags:
     CSV to process, relative to the project directory. If not specified, reads input/movies.csv
 -o, --output FILEPATH
     Directory for the output text file, relative to the project directory. If not specified, writes to output/showtimes.txt
--p --print
-    Prints output file to stdout
 -s --start-date
     Sets the start date for the output. If not specified, defaults to today
 -d --days
