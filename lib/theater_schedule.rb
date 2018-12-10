@@ -24,7 +24,10 @@ class TheaterSchedule
   def allocate_day(date)
     showings = []
     @movies.each do |movie|
-      showings.push(allocate_daily_showings(movie, date))
+      showings.push(
+        movie: movie,
+        times: allocate_daily_showings(movie, date)
+      )
     end
     { date: date, showings: showings }
   end

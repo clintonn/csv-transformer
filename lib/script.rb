@@ -65,8 +65,5 @@ OptionParser.new do |parser|
 end.parse!
 
 csvt = CSVTransformer.new(options)
-begin
-  csvt.transform
-rescue => e
-  binding.pry
-end
+csvt.transform
+csvt.write

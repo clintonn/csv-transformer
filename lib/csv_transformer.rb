@@ -51,4 +51,26 @@ class CSVTransformer
     process_titles
     process_schedule
   end
+
+  def write
+    @theater_schedule.schedule.each do |day|
+      write_day(day)
+    end
+  end
+
+  def write_day(day)
+    @output << "#{day[:date].strftime('%A %-m/%-d/%Y')}\n\n"
+    showings = day[:showings]
+    showings.each do |showing|
+      movie = showing[:movie]
+      @output << "#{movie.title} - Rated #{movie.mpaa_rating}, #{movie.human_readable_run_time}\n"
+      write_movie_times(showing[:times])
+    end
+  end
+
+  def write_movie_times(times)
+    @output << "\t\t"
+    @output << times.map(&:human_readable_timeframes).join("\n\t\t")
+    @output << "\n\n"
+  end
 end

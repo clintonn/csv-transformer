@@ -10,9 +10,8 @@ class Showing
     @end_time = end_time
   end
 
-  def to_human_timeframes
+  def human_readable_timeframes
     starting_time = date.beginning_of_day
     "#{starting_time.advance(minutes: start_time).strftime('%H:%M')} - #{starting_time.advance(minutes: end_time).strftime('%H:%M')}"
   end
-    
 end
