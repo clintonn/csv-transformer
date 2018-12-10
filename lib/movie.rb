@@ -7,4 +7,8 @@ class Movie
     @mpaa_rating = options[:mpaa_rating]
     @run_time = options[:run_time]
   end
+
+  def human_readable_run_time
+    "#{@run_time / 60}:#{@run_time % 60}"
+  end
 end
