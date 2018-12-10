@@ -49,10 +49,10 @@ class TheaterSchedule
     { start: end_time - run_time, end: end_time }
   end
 
-  def format_schedule_hash(start = Date.today, duration = 7)
+  def format_schedule_hash(start = DateTime.now.beginning_of_day, duration = 7)
     @schedule = []
     0.upto(duration - 1) do |days_out|
-      @schedule.push(allocate_day(Date.today.advance(days: days_out)))
+      @schedule.push(allocate_day(start.advance(days: days_out)))
     end
   end
 end
