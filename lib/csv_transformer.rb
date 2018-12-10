@@ -4,7 +4,6 @@ require_relative 'theater_schedule'
 require_relative 'movie'
 
 class CSVTransformer
-  attr_reader :output
   def initialize(
     output: File.open(File.expand_path('output/showtimes.txt', './'), 'w'),
     input: CSV.read(File.expand_path('input/movies.csv', './'), headers: true),
